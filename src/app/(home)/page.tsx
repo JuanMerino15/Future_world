@@ -5,9 +5,9 @@ export default function Home() {
 
   return (
     <main>
-      <h1>product</h1>
+      {/* <h1>product</h1> */}
 
-      {/* <MainProducts/> */}
+      <MainProducts/> 
 
     </main>
   );
