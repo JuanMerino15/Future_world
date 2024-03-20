@@ -1,21 +1,20 @@
 
 import { ProductsWrapper } from "app/components/store/ProductsWrapper"
-import { getProducts } from "app/services/shopify"
+import { getProducts } from "app/services/shopify/products"
 
-
-interface CategoryProps{
+interface CategoriesProps {
     params: {
-        categories: string[],
+        categories: string[]
         searchParams: string
     }
 }
-export default async function Category(props: CategoryProps){
 
+export default async function Categories(props: CategoriesProps){
     const products = await getProducts()
 
-    const {categories} = props.params 
-    // throw new Error('Error:BOOM!')
+    const { categories } = props.params
+    // throw new Error('Error:Boom!')
     return(
-        <ProductsWrapper products={products} />
-    )
+        <ProductsWrapper products={products}/>
+    );
 }
