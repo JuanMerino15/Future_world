@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ProductViewItemsOrder } from "./ProductViewItemsOrder";
 import styles from './ProductView.module.sass'
-
+import { useRouter } from "next/navigation";
 
 interface ProductViewProps {
   product: ProductType
@@ -9,6 +9,11 @@ interface ProductViewProps {
 
 export const ProductView = ({ product }: ProductViewProps) => {
 
+  const router = useRouter()
+
+  if(!product){
+    router.push('/')
+  }
   return (
     <main className={styles.ProductView}>
       <section className={styles.ProductView__images}>
